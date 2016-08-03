@@ -14,7 +14,6 @@ import org.springframework.util.Assert;
 
 import javax.annotation.Resource;
 /**
- * Created by zhangjin.jsf@taobao.com at 2016-01-14 14:24
  */
 public class CorpDaoTest extends BaseTestCase {
 

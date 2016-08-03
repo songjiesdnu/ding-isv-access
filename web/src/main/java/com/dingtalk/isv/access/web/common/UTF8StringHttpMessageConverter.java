@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zhangjin.jsf@taobao.com at 2016-01-06 10:35
  */
 public class UTF8StringHttpMessageConverter extends AbstractHttpMessageConverter<String> {
 

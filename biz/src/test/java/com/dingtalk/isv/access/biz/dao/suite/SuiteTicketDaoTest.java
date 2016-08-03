@@ -10,7 +10,6 @@ import javax.annotation.Resource;
 import java.util.Date;
 
 /**
- * Created by zhangjin.jsf@taobao.com at 2016-01-14 14:24
  */
 public class SuiteTicketDaoTest extends BaseTestCase {
 

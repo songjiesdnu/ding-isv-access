@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by zhangjin.jsf@taobao.com at 2016-01-11 18:32
  */
 public class TestServiceImpl implements TestService {
 

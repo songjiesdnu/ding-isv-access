@@ -6,7 +6,6 @@ import java.net.MalformedURLException;
 
 
 /**
- * Created by zhangjin.jsf@taobao.com at 2016-01-11 18:41
  */
 public class TestServiceClient {
 

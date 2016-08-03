@@ -4,7 +4,6 @@ import com.dingtalk.isv.access.api.model.corp.CorpTokenVO;
 import com.dingtalk.isv.common.model.ServiceResult;
 
 /**
- * Created by zhangjin.jsf@taobao.com at 2016-01-11 18:32
  */
 public interface TestService {
 
