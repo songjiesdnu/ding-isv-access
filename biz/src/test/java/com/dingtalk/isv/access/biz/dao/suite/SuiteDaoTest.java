@@ -22,10 +22,10 @@ public class SuiteDaoTest extends BaseTestCase {
     @Test
     public void test_insert() {
         String suiteName = "浩倡接入套件日常";
-        String suiteKey = "suiteytzpzchcpug3xpsm";
-        String suiteSecret = "mSk7Q5CpjoIgkjyb015E43qUkTkQyAUtsnRl0eK7Jr1_t19LecVThDSVeP2VbaTy";
-        String encodingAesKey= "yKO0z538zCNFxcFuuSzJmtPQCp5Me6MOzuBoK7KgoIc";
-        String token = "122348";
+        String suiteKey = "suitexxxxxx";
+        String suiteSecret = "xxxxxxxxxxxxxxxxxxxxx";
+        String encodingAesKey= "xxxxxxxxxxxxxxxxxxxx";
+        String token = "xxxxxxxxxxxxxxxxx";
         String eventReceiveUrl = "";
         SuiteVO suiteVO = new SuiteVO();
         suiteVO.setSuiteName(suiteName);
@@ -40,7 +40,7 @@ public class SuiteDaoTest extends BaseTestCase {
 
     @Test
     public void test_getSuiteByKey() {
-        SuiteDO suiteDO = suiteDao.getSuiteByKey("suite6ni7vdaqzpwlvger");
+        SuiteDO suiteDO = suiteDao.getSuiteByKey("suitexxxxxx");
         System.out.println(suiteDO);
         Assert.isTrue(null!=suiteDO);
     }
