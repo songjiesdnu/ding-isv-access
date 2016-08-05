@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS ding_isv_access DEFAULT CHARSET utf8mb4 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS ding_isv_access DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE `isv_app` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'pl',
@@ -8,7 +8,7 @@ CREATE TABLE `isv_app` (
   `app_id` bigint(20) NOT NULL COMMENT 'appid,此id来自于开发者中心',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_suite_app` (`suite_key`,`app_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='isv创建的app';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='isv创建的app';
 
 CREATE TABLE `isv_biz_lock` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
@@ -18,7 +18,7 @@ CREATE TABLE `isv_biz_lock` (
   `expire` datetime DEFAULT NULL COMMENT '过期时间,null表示不过期',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_lock_key` (`lock_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COMMENT='db锁';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='db锁';
 
 CREATE TABLE `isv_corp` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
@@ -32,7 +32,7 @@ CREATE TABLE `isv_corp` (
   `corp_logo_url` varchar(1024) DEFAULT NULL COMMENT '企业logo链接',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_corp_id` (`corp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COMMENT='企业信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8 COMMENT='企业信息表';
 
 
 CREATE TABLE `isv_corp_app` (
@@ -46,7 +46,7 @@ CREATE TABLE `isv_corp_app` (
   `corp_id` varchar(128) NOT NULL COMMENT '使用微应用的企业ID',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_corp_app` (`corp_id`,`app_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COMMENT='企业微应用信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8 COMMENT='企业微应用信息表';
 
 
 CREATE TABLE `isv_corp_suite_auth` (
@@ -58,7 +58,7 @@ CREATE TABLE `isv_corp_suite_auth` (
   `permanent_code` varchar(255) NOT NULL COMMENT '临时授权码或永久授权码value',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_corp_suite` (`corp_id`(191),`suite_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COMMENT='企业对套件的授权记录';
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COMMENT='企业对套件的授权记录';
 
 
 CREATE TABLE `isv_corp_suite_auth_faile` (
@@ -72,7 +72,7 @@ CREATE TABLE `isv_corp_suite_auth_faile` (
   `suite_push_type` varchar(128) NOT NULL COMMENT '推送类型',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_c_s_f_p` (`suite_key`,`corp_id`,`auth_faile_type`,`suite_push_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COMMENT='企业对套件的授权失败记录';
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COMMENT='企业对套件的授权失败记录';
 
 
 CREATE TABLE `isv_corp_suite_callback` (
@@ -83,7 +83,7 @@ CREATE TABLE `isv_corp_suite_callback` (
   `suite_key` varchar(128) NOT NULL COMMENT '套件key',
   `callback_tag` varchar(1024) NOT NULL COMMENT '注册事件tag,json结构存储',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='企业注册回调事件';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='企业注册回调事件';
 
 
 CREATE TABLE `isv_corp_suite_jsapi_ticket` (
@@ -96,7 +96,7 @@ CREATE TABLE `isv_corp_suite_jsapi_ticket` (
   `expired_time` datetime NOT NULL COMMENT '过期时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_suite_corp` (`suite_key`,`corp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12206 DEFAULT CHARSET=utf8mb4 COMMENT='企业使用jsapi的js ticket表';
+) ENGINE=InnoDB AUTO_INCREMENT=12206 DEFAULT CHARSET=utf8 COMMENT='企业使用jsapi的js ticket表';
 
 
 CREATE TABLE `isv_corp_token` (
@@ -109,7 +109,7 @@ CREATE TABLE `isv_corp_token` (
   `expired_time` datetime NOT NULL COMMENT '过期时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_suite_corp` (`suite_key`,`corp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1823 DEFAULT CHARSET=utf8mb4 COMMENT='套件能够访问企业数据的accesstoken';
+) ENGINE=InnoDB AUTO_INCREMENT=1823 DEFAULT CHARSET=utf8 COMMENT='套件能够访问企业数据的accesstoken';
 
 
 CREATE TABLE `isv_suite` (
@@ -124,7 +124,7 @@ CREATE TABLE `isv_suite` (
   `event_receive_url` varchar(256) NOT NULL COMMENT '回调地址',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_suite_key` (`suite_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='套件信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='套件信息表';
 
 
 CREATE TABLE `isv_suite_ticket` (
@@ -135,7 +135,7 @@ CREATE TABLE `isv_suite_ticket` (
   `ticket` varchar(100) NOT NULL COMMENT '套件ticket',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_suite_key` (`suite_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COMMENT='用于接收推送的套件ticket';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='用于接收推送的套件ticket';
 
 
 CREATE TABLE `isv_suite_token` (
@@ -147,7 +147,7 @@ CREATE TABLE `isv_suite_token` (
   `expired_time` datetime NOT NULL COMMENT '过期时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u_suite_key` (`suite_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COMMENT='套件的accesstoken表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='套件的accesstoken表';
 
 
 
